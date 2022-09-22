@@ -1,0 +1,43 @@
+{% extends "AppCafe/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %}
+                
+AppCafe
+
+{% endblock %}
+
+
+{% block titulodescripcion %}
+
+Finalidad de esta pagina
+
+{% endblock %}
+
+
+{% block descripcion %}
+En esta pagina web podes ver stock de cafe a la venta, metodos para preparar el cafe y la cantidad de gramos de cafe que tenemos a la venta.
+
+
+
+{% endblock %}
+
+{% block formulario %}
+<form action="/AppCafe/resultado/" method="GET">
+
+    <input type="text" name="origen" id="origen">
+    <input type="submit" value="Buscar">
+</form>
+
+<p>Estamos buscando el origen del cafe: {{origen}}</p>
+
+{% for cafe in cafe %}
+    <p>Origen: {{cafe.origen}} ---- Molienda: {{cafe.molienda}}</p>
+{% endfor %}
+{% endblock %}
+
+{% block titulodos %}
+STOCK DE CAFE
+{% endblock %}
